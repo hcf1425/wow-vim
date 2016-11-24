@@ -37,30 +37,29 @@ import ycm_core
 flags = [
 '-Wall',
 '-Wextra',
-'-Werror',
-'-Wc++98-compat',
+#  '-Werror',
 '-Wno-long-long',
-'-Wno-variadic-macros',
-'-fexceptions',
 '-DNDEBUG',
 '-DUSE_CLANG_COMPLETER',
 '-std=c99',
 '-x','c',
 '-nostdinc',
+#mac os
+'-isystem', '/System/Library/Frameworks/Python.framework/Headers',
 #ubuntu centos
-'-isystem','/usr/include',
+'-isystem', '/usr/include',
 #ubuntu
-'-isystem','/usr/include/x86_64-linux-gnu',
+'-isystem', '/usr/include/x86_64-linux-gnu',
 #centos6
 '-isystem', '/usr/include/c++/4.4.4',
 #centos7
 '-isystem', '/usr/include/c++/4.8.2',
 #ubuntu14.04
 '-isystem', '/usr/include/c++/4.8',
-'-isystem','/usr/include/x86_64-linux-gnu/c++/4.8',
+'-isystem', '/usr/include/x86_64-linux-gnu/c++/4.8',
 #ubuntu16.04
-'-isystem','/usr/include/c++/5',
-'-isystem','/usr/include/x86_64-linux-gnu/c++/5',
+'-isystem', '/usr/include/c++/5',
+'-isystem', '/usr/include/x86_64-linux-gnu/c++/5',
 #3rdparty
 
 #personal

@@ -38,7 +38,7 @@ flags = [
 '-Wall',
 '-Wextra',
 '-Werror',
-'-Wc++11-compat',
+'-Wc++98-c++11-compat',
 '-Wno-long-long',
 '-Wno-variadic-macros',
 '-fexceptions',
@@ -47,22 +47,22 @@ flags = [
 '-std=c++11',
 '-x','c++',
 '-nostdinc++',
-# using for MAC OS
+#mac os
 '-isystem', '/System/Library/Frameworks/Python.framework/Headers',
 #ubuntu centos
-'-isystem','/usr/include',
+'-isystem', '/usr/include',
 #ubuntu
-'-isystem','/usr/include/x86_64-linux-gnu',
+'-isystem', '/usr/include/x86_64-linux-gnu',
 #centos6
 '-isystem', '/usr/include/c++/4.4.4',
 #centos7
 '-isystem', '/usr/include/c++/4.8.2',
 #ubuntu14.04
 '-isystem', '/usr/include/c++/4.8',
-'-isystem','/usr/include/x86_64-linux-gnu/c++/4.8',
+'-isystem', '/usr/include/x86_64-linux-gnu/c++/4.8',
 #ubuntu16.04
-'-isystem','/usr/include/c++/5',
-'-isystem','/usr/include/x86_64-linux-gnu/c++/5',
+'-isystem', '/usr/include/c++/5',
+'-isystem', '/usr/include/x86_64-linux-gnu/c++/5',
 #3rdparty
 
 #personal
