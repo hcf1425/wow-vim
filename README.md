@@ -20,11 +20,11 @@
 |,fs|cscope find symbols|查找符号|
 |,fa|cscope find in interactive|交互查找|
 |,ft|cscope find strings|查找字符串|
-|\<right\>|cscope jump to next result|跳转到下一结果|
-|\<left\>|cscope jump to previous result|跳转到前一结果|
+|\<shift-right\>|cscope jump to next result|跳转到下一结果|
+|\<shift-left\>|cscope jump to previous result|跳转到前一结果|
 |<|open/close cscope result list|打开/关闭查找结果列表|
-|\<down\>|jump to next error|跳转到下一错误|
-|\<up\>|jump to previous error|跳转到前一错误|
+|\<shift-down\>|jump to next error|跳转到下一错误|
+|\<shift-up\>|jump to previous error|跳转到前一错误|
 |>|open/close error list|打开/关闭错误列表|
 |,tt|add/update your code title|添加/更新文件说明|
 |...|...|...|
