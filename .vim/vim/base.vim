@@ -20,11 +20,11 @@ set backspace=indent,eol,start                  " set backspace can delete all w
 
 "-----------color scheme----------
 " Solarized"
-" let g:solarized_termcolors=256
-" set background=dark
-" let g:solarized_termtrans=1
-" let g:solarized_contrast="normal"
-" let g:solarized_visibility="normal"
+" let g:solarized_termcolors = 256
+" set background = dark
+" let g:solarized_termtrans = 1
+" let g:solarized_contrast = 'normal'
+" let g:solarized_visibility = 'normal'
 " color solarized
 " highlight clear SignColumn
 " highlight clear LineNr 

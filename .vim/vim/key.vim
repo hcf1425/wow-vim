@@ -24,7 +24,7 @@ vnoremap <silent> // :call NERDComment(0,"toggle")<CR>
 
 "------------vim-autoformat----------
 noremap <leader>ff :Autoformat<cr>
-au bufwrite *.h,*.hpp,*.c,*.cpp,*.cc,*.java,*.lua :Autoformat
+" au bufwrite *.h,*.hpp,*.c,*.cpp,*.cc,*.java,*.lua :Autoformat
 
 "------------vim-go-------------
 au bufnewfile,bufread *.go setlocal noexpandtab tabstop=4 shiftwidth=4 filetype=go
@@ -50,14 +50,16 @@ au bufnewfile,bufread *.go setlocal noexpandtab tabstop=4 shiftwidth=4 filetype=
 
 
 "--------------cscope-----------------
+" au bufread *.h,*.hpp,*.c,*.cpp,*.java call CscopeUpdateDB()
+au bufread *.h,*.hpp,*.c,*.cpp,*.java call AutoloadDB('')
 " Find in interactive
 au filetype c,cpp,java nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<cr>
 " s: Find this C symbol
-au filetype c,cpp,java noremap <leader>fs :call CscopeFind('s', expand('<cword>'))<cr>
+au filetype c,cpp,java nnoremap <leader>fs :call CscopeFind('s', expand('<cword>'))<cr>
 " t: Find this text string
 au filetype c,cpp,java nnoremap <leader>ft :call CscopeFind('t', expand('<cword>'))<cr>
-au filetype c,cpp,java nnoremap <silent> <right> :call QuickFixNext()<cr>
-au filetype c,cpp,java nnoremap <silent> <left> :call QuickFixPrevious()<cr>
+au filetype c,cpp,java nnoremap <silent> <s-right> :call QuickFixNext()<cr>
+au filetype c,cpp,java nnoremap <silent> <s-left> :call QuickFixPrevious()<cr>
 au filetype c,cpp,java nnoremap <silent> < :call QuickFixToggle()<cr>
 " g: Find this definition
 " nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<cr>
@@ -100,8 +102,8 @@ au filetype c,cpp,objc,objcpp,cs nnoremap gd :YcmCompleter GoToDefinitionElseDec
 
 
 " -------------------syntastic------------------
-nnoremap <silent> <up> :call LocationPrevious()<cr>
-nnoremap <silent> <down> :call LocationNext()<cr>
+nnoremap <silent> <s-up> :call LocationPrevious()<cr>
+nnoremap <silent> <s-down> :call LocationNext()<cr>
 nnoremap <silent> > :call LocationToggle()<cr>
 
 " -----------------other--------------------

@@ -25,7 +25,7 @@ endfunction
 
 "for c/c++ golang and some language to add a info header
 function AddTitle()
-    let n=1
+    let n = 1
     "默认为添加
     while n < 10
         let line = getline(n)
@@ -64,7 +64,7 @@ endfunction
 
 "for lua language to add a info header
 function AddLuaTitle()
-    let n=1
+    let n = 1
     while n < 10
         let line = getline(n)
         if line =~ '^\#\s*\S*Last\smodified:\S*.*$'
