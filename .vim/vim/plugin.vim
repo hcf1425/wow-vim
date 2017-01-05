@@ -82,8 +82,9 @@ let g:formatters_java = ['harttle']
 
 "-----------------cscopex-----------------
 let g:cscope_silent = 1
-let g:cscope_interested_files = '\.c$\|\.cpp$\|\.h$\|\.hpp$\|\.cc'
+let g:cscope_interested_files = '\.c$\|\.cpp$\|\.h$\|\.hpp$\|\.cc$\|\.java'
 let g:cscope_auto_update = 1
+let g:cscope_preload_path = '.'
 
 "------------nerdcommenter------------
 let g:NERDSpaceDelims = 1

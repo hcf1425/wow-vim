@@ -50,8 +50,6 @@ au bufnewfile,bufread *.go setlocal noexpandtab tabstop=4 shiftwidth=4 filetype=
 
 
 "--------------cscope-----------------
-" au bufread *.h,*.hpp,*.c,*.cpp,*.java call CscopeUpdateDB()
-au bufread *.h,*.hpp,*.c,*.cpp,*.java call AutoloadDB('')
 " Find in interactive
 au filetype c,cpp,java nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<cr>
 " s: Find this C symbol
