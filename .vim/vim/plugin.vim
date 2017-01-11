@@ -33,7 +33,7 @@ let g:tagbar_autoclose = 0
 "--------------ycm------------------
 set completeopt-=preview
 au bufread,bufnewfile *.c let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/c/.ycm_extra_conf.py'
-au bufread,bufnewfile *.h,*.hpp,*.cpp,*.cc,*.cxx let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/cpp/.ycm_extra_conf.py'
+au bufread,bufnewfile *.h,*.hpp,*.cpp,*.cc,*.cxx,*.java let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/cpp/.ycm_extra_conf.py'
 if filereadable('.ycm_extra_conf.py')
     let g:ycm_global_ycm_extra_conf = './.ycm_extra_conf.py'
 endif

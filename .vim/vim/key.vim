@@ -107,4 +107,4 @@ nnoremap <silent> > :call LocationToggle()<cr>
 " -----------------other--------------------
 au filetype c,cpp,go,lua,java,javascript nmap <leader>tt :call AddTitle()<cr>
 au filetype lua nmap <leader>tt :call AddLuaTitle()<cr>
-
+au filetype c,cpp nnoremap <leader>aa :A<cr>

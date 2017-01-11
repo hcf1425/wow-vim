@@ -33,6 +33,7 @@ Plugin 'sentientmachine/erics_vim_syntax_and_color_highlighting'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tbastos/vim-lua'
 Plugin 'adwpc/cscopex'
+Plugin 'vim-scripts/a.vim'
 call vundle#end()
 filetype plugin indent on
 "----------------------------------
