@@ -75,8 +75,10 @@ let g:UltiSnipsSnippetsDir = '~/.vim/snips'
 let g:UltiSnipsSnippetDirectories = ['snips']
 
 "------------------autoformat--------------------------
-let g:formatdef_harttle = '"--style=allman --indent=spaces=4 --indent-switches --indent-cases --indent-namespaces --break-blocks --pad-oper --unpad-paren --delete-empty-lines --convert-tabs --mode=c"'
+let g:formatterpath = ['/usr/bin']
+let g:formatdef_harttle = '"astyle --style=google --indent=spaces=4 --indent-switches --indent-cases --indent-namespaces --indent-modifiers --indent-switches --indent-labels --indent-preproc-block --indent-preproc-define --break-blocks --pad-oper --pad-comma --pad-header --delete-empty-lines --convert-tabs --add-brackets --delete-empty-lines"'
 let g:formatters_cpp = ['harttle']
+let g:formatters_c = ['harttle']
 let g:formatters_java = ['harttle']
 
 

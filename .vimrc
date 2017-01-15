@@ -34,21 +34,22 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'tbastos/vim-lua'
 Plugin 'adwpc/cscopex'
 Plugin 'vim-scripts/a.vim'
+Plugin 'vim-scripts/nginx.vim'
 call vundle#end()
 filetype plugin indent on
 "----------------------------------
 
 " vim base config"
-so ~/.vim/vim/base.vim
+so ~/.vim/base.vim
 
 " vim plugin config"
-so ~/.vim/vim/plugin.vim
+so ~/.vim/plugin.vim
 
 " vim useful function config"
-so ~/.vim/vim/func.vim
+so ~/.vim/func.vim
 
 " vim key mapping config"
-so ~/.vim/vim/key.vim
+so ~/.vim/key.vim
 
 
 
