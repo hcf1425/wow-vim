@@ -51,14 +51,14 @@ au bufnewfile,bufread *.go setlocal noexpandtab tabstop=4 shiftwidth=4 filetype=
 
 "--------------cscope-----------------
 " Find in interactive
-au filetype c,cpp,java nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<cr>
+au filetype c,cpp,java,go nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<cr>
 " s: Find this C symbol
-au filetype c,cpp,java nnoremap <leader>fs :call CscopeFind('s', expand('<cword>'))<cr>
+au filetype c,cpp,java,go nnoremap <leader>fs :call CscopeFind('s', expand('<cword>'))<cr>
 " t: Find this text string
-au filetype c,cpp,java nnoremap <leader>ft :call CscopeFind('t', expand('<cword>'))<cr>
-au filetype c,cpp,java nnoremap <silent> <s-right> :call QuickFixNext()<cr>
-au filetype c,cpp,java nnoremap <silent> <s-left> :call QuickFixPrevious()<cr>
-au filetype c,cpp,java nnoremap <silent> < :call QuickFixToggle()<cr>
+au filetype c,cpp,java,go nnoremap <leader>ft :call CscopeFind('t', expand('<cword>'))<cr>
+au filetype c,cpp,java,go nnoremap <silent> <s-right> :call QuickFixNext()<cr>
+au filetype c,cpp,java,go nnoremap <silent> <s-left> :call QuickFixPrevious()<cr>
+au filetype c,cpp,java,go nnoremap <silent> < :call QuickFixToggle()<cr>
 " g: Find this definition
 " nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<cr>
 " d: Find functions called by this function

@@ -76,15 +76,14 @@ let g:UltiSnipsSnippetDirectories = ['snips']
 
 "------------------autoformat--------------------------
 let g:formatterpath = ['/usr/bin']
-let g:formatdef_harttle = '"astyle --style=google --indent=spaces=4 --indent-switches --indent-cases --indent-namespaces --indent-modifiers --indent-switches --indent-labels --indent-preproc-block --indent-preproc-define --break-blocks --pad-oper --pad-comma --pad-header --delete-empty-lines --convert-tabs --add-brackets --delete-empty-lines"'
-let g:formatters_cpp = ['harttle']
-let g:formatters_c = ['harttle']
-let g:formatters_java = ['harttle']
+let g:formatdef_c = '"astyle --style=google --indent=spaces=4 --indent-switches --indent-cases --indent-namespaces --indent-modifiers --indent-switches --indent-labels --indent-preproc-block --indent-preproc-define --break-blocks --pad-oper --pad-comma --pad-header --delete-empty-lines --convert-tabs --add-brackets --delete-empty-lines"'
+let g:formatters_cpp = ['c']
+let g:formatters_c = ['c']
 
 
 "-----------------cscopex-----------------
 let g:cscope_silent = 1
-let g:cscope_interested_files = '\.c$\|\.cpp$\|\.h$\|\.hpp$\|\.cc$\|\.java'
+let g:cscope_interested_files = '\.c$\|\.cpp$\|\.h$\|\.hpp$\|\.cc$\|\.java$\|\.go'
 let g:cscope_auto_update = 1
 let g:cscope_preload_path = '.'
 
@@ -103,8 +102,8 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
+let g:go_highlight_types = 0
+let g:go_highlight_operators = 0
 let g:go_highlight_build_constraints = 1
 let g:go_template_autocreate = 1
 let g:go_fmt_autosave = 1
