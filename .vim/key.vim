@@ -85,7 +85,7 @@ au filetype c,cpp,java,go nnoremap <silent> < :call QuickFixToggle()<cr>
 "
 "
 " 只能是 #include 或已打开的文件
-au filetype c,cpp,objc,objcpp,cs nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
+au filetype c,cpp,objc,objcpp,cs nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 " nnoremap <leader>yf :YcmCompleter GoToDefinition<cr>
 " nnoremap <leader>yc :YcmCompleter GoToDeclaration<cr>
 " nnoremap <leader>yo :lopen<cr>
