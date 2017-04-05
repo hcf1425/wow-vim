@@ -1,9 +1,9 @@
-##a simple show
+## a simple show
 ![show](./show.gif)
-##layout
+## layout
 ![vim](./vim.png)
 
-##support keys (you can diy keys in ~/.vim/vim/key.vim)
+## support keys (you can diy keys in ~/.vim/vim/key.vim)
 
 |key|info|说明|
 |---|---|---|
@@ -30,7 +30,7 @@
 |...|...|...|
 
 
-##support languages and features (1★=2☆)
+## support languages and features (1★=2☆)
 
 |language(语言)|highlight(高亮)|autocomplete(补全)|syntax(查错)|snips(补全块)|jump(跳转)|todo(待改进)|
 |---|---|---|---|---|---|---|
@@ -45,13 +45,13 @@
 |php|★|★|☆|★★☆|☆|★★|
 |...|...|...|...|...|...|...|
 
-##plugins and resources path
+## plugins and resources path
 
 this is a simple and powerful configuration of vim, you can diy your own vim base on it.
 you can share some good plugins with me.
 
 |path|info|
-|---|---|---|
+|---|---|
 |~/.vimrc|entrance configuration|
 |~/.vim/base.vim|base configuration|
 |~/.vim/plugin.vim|plugins configuration|
@@ -63,7 +63,7 @@ you can share some good plugins with me.
 |~/.vim/ycm/|.ycm\_extra\_conf.py dir|
 |~/.vim/dicts/|dictionary dir|
 
-##install
+## install
 
 	git clone https://github.com/adwpc/vim.git
 	cd vim
