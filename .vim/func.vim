@@ -221,9 +221,9 @@ endfunction
 
 
 " autoclose last open location/quickfix/help windows on a tab
-if has('autocmd')
-    aug AutoCloseAllQF
-        au!
-        au WinEnter * nested call QuitIfOnlyWindow()
-    aug END
-endif
+" if has('autocmd')
+    " aug AutoCloseAllQF
+        " au!
+        " au WinEnter * nested call QuitIfOnlyWindow()
+    " aug END
+" endif
