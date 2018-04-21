@@ -1,6 +1,5 @@
 
 "----------base config-----------
-set encoding=utf-8
 set hlsearch                                    " high light search"
 set ts=4                                        " 1 tab = 4 space"
 set sw=4                                        " tab width"
@@ -33,6 +32,7 @@ set backspace=indent,eol,start                  " set backspace can delete all w
 
 " molokai_dark"
 colorscheme molokai_dark
+hi CursorLine cterm=NONE ctermbg=blue ctermfg=black
 
 
 
