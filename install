@@ -91,13 +91,14 @@ function vimrc_inst()
     #install vim config and plugin
     mv ~/.vimrc ~/.vimrc.bak
     mv ~/.vim ~/.vim.bak
-    cp -rf .vim ~
     cp -rf .vimrc ~
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim -u ~/.vimrc -c ":PluginInstall" -c ":q" -c ":q"
+    cp -rf .vim ~
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim -u ~/.vimrc -c ":PlugInstall" -c ":q" -c ":q"
     
     #install ycm
-    cd ~/.vim/bundle/YouCompleteMe/ && git submodule update --init --recursive && ./install.py --all
+    #cd ~/.vim/bundle/YouCompleteMe/ && git submodule update --init --recursive && ./install.py --all
 
     #install vim-go bins
     vim -u ~/.vimrc -c ":GoInstallBinaries" -c ":q" /tmp/tmp.go

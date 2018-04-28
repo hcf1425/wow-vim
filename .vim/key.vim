@@ -100,12 +100,20 @@ au filetype c,cpp,objc,objcpp,cs nnoremap <leader>gd :YcmCompleter GoToDefinitio
 " nnoremap <leader>ue :UltiSnipsEdit<cr>
 
 
-" -------------------syntastic------------------
+" -------------------syntastic/neomake------------------
 nnoremap <silent> <s-up> :call LocationPrevious()<cr>
 nnoremap <silent> <s-down> :call LocationNext()<cr>
 nnoremap <silent> > :call LocationToggle()<cr>
+
+"-------------------LeaderF---------------------
+" let g:Lf_ShortcutF = '<c-p>'
+" let g:Lf_ShortcutB = '<m-n>'
+noremap <leader>sm :LeaderfMru<cr>
+noremap <leader>sf :LeaderfFile<cr>
+noremap <leader>st :LeaderfTag<cr>
 
 " -----------------other--------------------
 au filetype c,cpp,go,lua,java,javascript nmap <leader>tt :call AddTitle()<cr>
 au filetype lua nmap <leader>tt :call AddLuaTitle()<cr>
 au filetype c,cpp nnoremap <leader>aa :A<cr>
+

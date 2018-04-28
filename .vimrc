@@ -4,38 +4,40 @@ if $SHELL =~ 'bin/fish' || $SHELL =~ '/usr/local/bin/fish'
     set shell=/bin/bash
 endif
 
-"-------------vundle----------------
-set nocp
+"-------------plugin----------------
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'asins/vim-dict'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'fatih/vim-go'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-scripts/DrawIt'
-Plugin 'artur-shaik/vim-javacomplete2'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-lua-ftplugin'
-Plugin 'pangloss/vim-javascript'
-Plugin 'sentientmachine/erics_vim_syntax_and_color_highlighting'
-Plugin 'Yggdroot/indentLine'
-Plugin 'tbastos/vim-lua'
-Plugin 'adwpc/cscopex'
-Plugin 'vim-scripts/a.vim'
-Plugin 'vim-scripts/nginx.vim'
-call vundle#end()
+set nocompatible
+call plug#begin('~/.vim/plugged')
+Plug 'asins/vim-dict'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'majutsushi/tagbar'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'fatih/vim-go'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Chiel92/vim-autoformat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'vim-scripts/DrawIt'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-lua-ftplugin'
+Plug 'pangloss/vim-javascript'
+Plug 'sentientmachine/erics_vim_syntax_and_color_highlighting'
+Plug 'Yggdroot/indentLine'
+Plug 'tbastos/vim-lua'
+Plug 'adwpc/cscopex'
+Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/nginx.vim'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Shougo/echodoc.vim'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'neomake/neomake'
+call plug#end()
 filetype plugin indent on
 "----------------------------------
 

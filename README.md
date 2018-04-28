@@ -10,6 +10,8 @@
 |,|leader key|前缀键|
 |,ll|open nerd tree on left|打开文件浏览器|
 |,rr|open tag bar on right|打开符号浏览器|
+|,sm|search most recent used file|查找最近使用过的文件|
+|,sf|search file|查找文件|
 |,gd|jump to the definition(c/c++/go)|跳转到定义(c/c++/go)|
 |,fs|cscope find symbols(c/c++/go)|查找符号(c/c++/go)|
 |,fa|cscope find in interactive(c/c++)|交互查找(c/c++)|

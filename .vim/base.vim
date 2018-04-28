@@ -10,9 +10,7 @@ set incsearch                                   " search while input key words"
 syntax on                                       " code show high light"
 set clipboard=unnamed                           " p can paste system buffer"
 set t_Co=256                                    " tell Vim that the terminal supports 256 colors" 
-au BufReadPost * if line("'\"") > 0|if 
-\line("'\"") <= line("$")|exe("norm '\"")
-\|else|exe "norm $"|endif|endif                 " remember the current line when quit"
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif                                                       " remember the current line when quit"
 set vb t_vb=                                    " close bell voice"
 set backspace=indent,eol,start                  " set backspace can delete all words"
 " set foldmethod=manual                           " fold type"
