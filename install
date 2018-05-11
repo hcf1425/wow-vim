@@ -89,8 +89,8 @@ function ubuntu_vim_inst()
 function vimrc_inst()
 {
     #install vim config and plugin
-    mv ~/.vimrc ~/.vimrc.bak
-    mv ~/.vim ~/.vim.bak
+    mv ~/.vimrc ~/.vimrc.bak.`date +%Y%m%d%H%M%S`
+    mv ~/.vim ~/.vim.bak.`date +%Y%m%d%H%M%S`
     cp -rf .vimrc ~
     cp -rf .vim ~
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
