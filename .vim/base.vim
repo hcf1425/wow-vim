@@ -9,7 +9,7 @@ set showmatch                                   " show match e.g. '(' and ')'"
 set incsearch                                   " search while input key words"
 syntax on                                       " code show high light"
 set clipboard=unnamed                           " p can paste system buffer"
-set t_Co=256                                    " tell Vim that the terminal supports 256 colors" 
+set t_Co=256                                    " tell Vim that the terminal supports 256 colors"
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif                                                       " remember the current line when quit"
 set vb t_vb=                                    " close bell voice"
 set backspace=indent,eol,start                  " set backspace can delete all words"
@@ -25,7 +25,7 @@ set backspace=indent,eol,start                  " set backspace can delete all w
 " let g:solarized_visibility = 'normal'
 " color solarized
 " highlight clear SignColumn
-" highlight clear LineNr 
+" highlight clear LineNr
 
 
 " molokai_dark"
@@ -43,9 +43,12 @@ hi CursorLine cterm=NONE ctermbg=blue ctermfg=black
 
 " " set fold/unfold all key
 " function ForceFoldmethodIndent()
-	" if &foldenable
-		" se foldmethod=indent
-	" endif
+" if &foldenable
+" se foldmethod=indent
+" endif
 " endfunction
 " nnoremap <leader>ff zi|call ForceFoldmethodIndent()
 
+"auto close locallist and quickfix when quit
+autocmd BufWinEnter quickfix nnoremap <silent> <buffer>   q :cclose<cr>:lclose<cr>
+autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd| q | endif

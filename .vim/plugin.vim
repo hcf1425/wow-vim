@@ -19,7 +19,6 @@ let g:NERDTreeWinSize = 30
 let g:NERDTreeShowLineNumbers = 0
 
 "--------------tagbar------------
-let g:tagbar_type_go = {'ctagstype' : 'go', 'kinds' : ['p:package','i:imports:1', 'c:constants','v:variables','t:types', 'n:interfaces','w:fields','e:embedded', 'm:methods','r:constructor','f:functions'], 'sro' : '.','kind2scope' : {'t' : 'ctype', 'n' : 'ntype'},'scope2kind' : {'ctype' : 't', 'ntype' : 'n'},'ctagsbin'  : 'gotags', 'ctagsargs' : '-sort -silent'}
 let g:tagbar_autofocus = 0
 let g:tagbar_left = 0
 let g:tagbar_expand = 1
@@ -115,17 +114,6 @@ let g:go_fmt_fail_silently = 1
 let g:go_list_type = 'quickfix'
 let g:go_def_reuse_buffer = 1
 
-"-------------syntastic----------------
-" let g:syntastic_enable_signs = 1
-" let g:syntastic_error_symbol = '!!'
-" let g:syntastic_style_error_symbol = '!!'
-" let g:syntastic_warning_symbol = '??'
-" let g:syntastic_style_warning_symbol = '??'
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_aggregate_errors = 1
 
 "-------------------javacomplete2------------
 au filetype java setlocal omnifunc=javacomplete#Complete
@@ -160,21 +148,6 @@ let g:indentLine_conceallevel = 1
 " au bufread,bufnewfile *.go set list lcs=tab:\|\
 
 
-"-------------------ole------------
-let g:ale_linters_explicit = 1
-let g:ale_completion_delay = 500
-let g:ale_echo_delay = 20
-let g:ale_lint_delay = 500
-let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_on_insert_leave = 1
-let g:airline#extensions#ale#enabled = 1
-
-let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
-let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
-let g:ale_c_cppcheck_options = ''
-let g:ale_cpp_cppcheck_options = ''
-
 "---------------------leaderF----------
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 
@@ -191,10 +164,14 @@ let g:Lf_NormalMap = { "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit
 " 自动打开 quickfix window ，高度为 6
 let g:asyncrun_open = 6
 "---------------neomake----------------
-if !empty(glob("~/.vim/bundle/neomake/neomake.vim)"))
-" call neomake#configure#automake('nrwi', 500)
-call neomake#configure#automake({ 'TextChanged': {'delay': 0}, 'InsertLeave': {'delay': 0}, 'BufWritePost': {'delay': 0}, 'BufWinEnter': {'delay': 0}, }, 500)
-let g:neomake_open_list = 2
+if !empty(glob('~/.vim/plugged/neomake/plugin/neomake.vim'))
+    call neomake#configure#automake('nrwi', 500)
+    call neomake#configure#automake({ 'TextChanged': {'delay': 0}, 'InsertLeave': {'delay': 0}, 'BufWritePost': {'delay': 0}, 'BufWinEnter': {'delay': 0}, }, 500)
+    let g:neomake_open_list = 2
+    let g:neomake_error_sign = {'text': '!!', 'texthl': 'ERROR'}
+    let g:neomake_warning_sign = {'text': '??', 'texthl': 'WARNING'}
+    let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
+    let g:neomake_info_sign = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
 endif
 "----------------echodoc---------------
 let g:echodoc_enable_at_startup = 1
