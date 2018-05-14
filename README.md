@@ -32,7 +32,7 @@
 |...|...|...|
 
 
-## support languages and features (1★=2☆)
+## support languages and features (支持语言与特性）【 1★=2☆】
 
 |language(语言)|highlight(高亮)|autocomplete(补全)|syntax(查错)|snips(补全块)|jump(跳转)|todo(待改进)|
 |---|---|---|---|---|---|---|
@@ -52,18 +52,18 @@
 this is a simple and powerful configuration of vim, you can diy your own vim base on it.
 you can share some good plugins with me.
 
-|path|info|
-|---|---|
-|~/.vimrc|entrance configuration|
-|~/.vim/base.vim|base configuration|
-|~/.vim/plugin.vim|plugins configuration|
-|~/.vim/func.vim|function configuration|
-|~/.vim/key.vim|key configuration|
-|~/.vim/bundle/|plugin installed dir|
-|~/.vim/colors/|colorscheme installed dir|
-|~/.vim/snips/|snips collected dir|
-|~/.vim/ycm/|.ycm\_extra\_conf.py dir|
-|~/.vim/dicts/|dictionary dir|
+|path|DIY info|DIY说明|
+|---|---|---|
+|~/.vimrc|entrance configuration|插件入口
+|~/.vim/base.vim|base configuration|基础配置
+|~/.vim/plugin.vim|plugins configuration|插件们的配置
+|~/.vim/func.vim|function configuration|自定函数
+|~/.vim/key.vim|key configuration|快捷键配置
+|~/.vim/plugged/|plugin installed dir|插件默认安装目录
+|~/.vim/colors/|colorscheme installed dir|色彩主题安装目录
+|~/.vim/snips/|snips collected dir|snip补全收集
+|~/.vim/ycm/|.ycm\_extra\_conf.py dir|ycm配置目录
+|~/.vim/dicts/|dictionary dir|字典目录
 
 ## install
 

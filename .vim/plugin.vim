@@ -165,9 +165,9 @@ let g:Lf_NormalMap = { "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit
 let g:asyncrun_open = 6
 "---------------neomake----------------
 if !empty(glob('~/.vim/plugged/neomake/plugin/neomake.vim'))
-    call neomake#configure#automake('nrwi', 500)
-    call neomake#configure#automake({ 'TextChanged': {'delay': 0}, 'InsertLeave': {'delay': 0}, 'BufWritePost': {'delay': 0}, 'BufWinEnter': {'delay': 0}, }, 500)
-    let g:neomake_open_list = 2
+    call neomake#configure#automake('nrwi', 300)
+    " call neomake#configure#automake({ 'TextChanged': {'delay': 0}, 'InsertLeave': {'delay': 0}, 'BufWritePost': {'delay': 0}, 'BufWinEnter': {'delay': 0}, }, 500)
+    " let g:neomake_open_list = 2
     let g:neomake_error_sign = {'text': '!!', 'texthl': 'ERROR'}
     let g:neomake_warning_sign = {'text': '??', 'texthl': 'WARNING'}
     let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}

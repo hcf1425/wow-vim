@@ -51,7 +51,7 @@ au bufnewfile,bufread *.go setlocal noexpandtab tabstop=4 shiftwidth=4 filetype=
 
 "--------------cscope-----------------
 " au bufread *.h,*.hpp,*.cc,*.c,*.cpp,*.java,*.go :CscopeUpdate
-au filetype c,cpp,java,go nnoremap <leader>cu :CscopeUpdate<cr>
+au filetype c,cpp,java,go nnoremap <leader>cu :CscopeUpdate
 " Find in interactive
 au filetype c,cpp,java,go nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<cr>
 " s: Find this C symbol
@@ -112,6 +112,7 @@ nnoremap <silent> > :call LocationToggle()<cr>
 noremap <leader>sm :LeaderfMru<cr>
 noremap <leader>sf :LeaderfFile<cr>
 noremap <leader>st :LeaderfTag<cr>
+
 
 " -----------------other--------------------
 au filetype c,cpp,go,lua,java,javascript nmap <leader>tt :call AddTitle()<cr>

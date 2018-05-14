@@ -15,6 +15,10 @@ set vb t_vb=                                    " close bell voice"
 set backspace=indent,eol,start                  " set backspace can delete all words"
 " set foldmethod=manual                           " fold type"
 " set foldlevel=1                                 " fold level"
+"
+" set buffer modifiable
+set modifiable
+
 
 "-----------color scheme----------
 " Solarized"
