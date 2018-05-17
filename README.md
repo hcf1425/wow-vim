@@ -65,7 +65,7 @@ you can share some good plugins with me.
 |~/.vim/ycm/|.ycm\_extra\_conf.py dir|ycm配置目录
 |~/.vim/dicts/|dictionary dir|字典目录
 
-## install
+## install(中途vim-go安装工具时需使用翻墙网络)
 
 	git clone https://github.com/adwpc/vim.git
 	cd vim
