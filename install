@@ -95,22 +95,21 @@ function vimrc_inst()
     cp -rf .vimrc ~
     cp -rf .vim ~
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim -u ~/.vimrc -c ":PlugInstall" -c ":q" -c ":q"
-
+    
     #install ycm
     #cd ~/.vim/bundle/YouCompleteMe/ && git submodule update --init --recursive && ./install.py --all
 
     #install vim-go bins
     vim -u ~/.vimrc -c ":GoInstallBinaries" -c ":q" /tmp/tmp.go
-
+    
 }
 
 # git1.9.5、fish、autojump
 function ubuntu_fish_inst()
 {
-    sudo apt-get update
-    sudo apt-get upgrade
+    sudo apt-get -y update
     sudo apt-get install -y gcc g++ make vim lrzsz aptitude autoconf libtool cmake dpkg-dev wget
     wget https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.gz
     sudo apt-get -y remove git fish
@@ -127,7 +126,7 @@ function ubuntu_fish_inst()
     sudo sh -c 'echo "/usr/local/fish/bin/fish" >> /etc/shells'
     export PATH=/usr/local/fish/bin/:$PATH
     chsh -s /usr/local/fish/bin/fish
-    git clone https://github.com/oh-my-fish/oh-my-fish
+    git clone https://github.com/oh-my-fish/oh-my-fish 
     cd oh-my-fish && bin/install --offline
     cd $CURDIR
 }
@@ -141,7 +140,15 @@ function ubuntu_autojump_inst()
     sudo echo "[[ -s /home/adam/.autojump/etc/profile.d/autojump.sh ]] && source /home/adam/.autojump/etc/profile.d/autojump.sh" >> ~/.bashrc
     sudo echo "if test -f /home/adam/.autojump/share/autojump/autojump.fish; . /home/adam/.autojump/share/autojump/autojump.fish; end" >> ~/.config/fish/config.fish
     sudo echo "if test -f /home/adam/.autojump/share/autojump/autojump.fish; . /home/adam/.autojump/share/autojump/autojump.fish; end" >> ~/.local/share/omf/init.fish
+ 
+}
 
+function go_inst()
+{
+    wget https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.10.2.linux-amd64.tar.gz
+    sudo sh -c 'echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile'
+    sudo echo "set -x PATH /usr/local/go/bin $PATH" >> ~/.config/fish/config.fish
 }
 
 
@@ -157,9 +164,10 @@ case "$OBJ" in
     centos6_python2) centos6_python2_inst;;
     ubuntu_fish) ubuntu_fish_inst;;
     ubuntu_autojump) ubuntu_autojump_inst;;
+    go) go_inst;;
 
     *)  echo "Usage: install {vimrc}" >&2
-        echo "if you need new vim, try install {ubuntu_vim|centos6_vim|centos7_vim|ubuntu_fish|ubuntu_autojump}" >&2
+        echo "if you need new vim, try install {ubuntu_vim|centos6_vim|centos7_vim|ubuntu_fish|ubuntu_autojump|go}" >&2
         echo "if you need some deps, try install {centos6_gcc|centos6_python2}" >&2
         exit 1
         ;;
