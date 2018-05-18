@@ -3,7 +3,8 @@
 OBJ=""
 CURDIR=$PWD
 INSTALLLOG=$CURDIR"/$0.log"
-CORES=4
+# CORES=4
+CORES=`cat /proc/cpuinfo | grep "processor" | wc -l`
 
 function centos7_vim_inst()
 {
@@ -94,16 +95,55 @@ function vimrc_inst()
     cp -rf .vimrc ~
     cp -rf .vim ~
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim -u ~/.vimrc -c ":PlugInstall" -c ":q" -c ":q"
-    
+
     #install ycm
     #cd ~/.vim/bundle/YouCompleteMe/ && git submodule update --init --recursive && ./install.py --all
 
     #install vim-go bins
     vim -u ~/.vimrc -c ":GoInstallBinaries" -c ":q" /tmp/tmp.go
-    
+
 }
+
+# git1.9.5、fish、autojump
+function ubuntu_fish_inst()
+{
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get install -y gcc g++ make vim lrzsz aptitude autoconf libtool cmake dpkg-dev wget
+    wget https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.gz
+    sudo apt-get -y remove git fish
+    sudo apt-get -y install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev
+    tar vzxf git-1.9.5.tar.gz
+    cd git-1.9.5 && ./configure && make -j4 && sudo make install
+    cd $CURDIR
+
+    sudo apt-get -y install libncurses5-dev
+    wget https://launchpad.net/~fish-shell/+archive/ubuntu/release-2/+files/fish_2.6.0.orig.tar.gz
+    tar zxvf fish_2.6.0.orig.tar.gz
+    cd fish-2.6.0 && ./configure --prefix=/usr/local/fish && make -j4 && sudo make install
+    cd $CURDIR
+    sudo sh -c 'echo "/usr/local/fish/bin/fish" >> /etc/shells'
+    export PATH=/usr/local/fish/bin/:$PATH
+    chsh -s /usr/local/fish/bin/fish
+    git clone https://github.com/oh-my-fish/oh-my-fish
+    cd oh-my-fish && bin/install --offline
+    cd $CURDIR
+}
+
+function ubuntu_autojump_inst()
+{
+    sudo apt-get install -y python-dev python3-dev
+    git clone https://github.com/wting/autojump.git
+    cd autojump && sudo ./install.py
+    cd $CURDIR
+    sudo echo "[[ -s /home/adam/.autojump/etc/profile.d/autojump.sh ]] && source /home/adam/.autojump/etc/profile.d/autojump.sh" >> ~/.bashrc
+    sudo echo "if test -f /home/adam/.autojump/share/autojump/autojump.fish; . /home/adam/.autojump/share/autojump/autojump.fish; end" >> ~/.config/fish/config.fish
+    sudo echo "if test -f /home/adam/.autojump/share/autojump/autojump.fish; . /home/adam/.autojump/share/autojump/autojump.fish; end" >> ~/.local/share/omf/init.fish
+
+}
+
 
 if [ "$1" != ""  ];then
     OBJ=$1
@@ -115,8 +155,11 @@ case "$OBJ" in
     centos7_vim) centos7_vim_inst;;
     centos6_gcc) centos6_gcc_inst;;
     centos6_python2) centos6_python2_inst;;
+    ubuntu_fish) ubuntu_fish_inst;;
+    ubuntu_autojump) ubuntu_autojump_inst;;
+
     *)  echo "Usage: install {vimrc}" >&2
-        echo "if you need new vim, try install {ubuntu_vim|centos6_vim|centos7_vim}" >&2
+        echo "if you need new vim, try install {ubuntu_vim|centos6_vim|centos7_vim|ubuntu_fish|ubuntu_autojump}" >&2
         echo "if you need some deps, try install {centos6_gcc|centos6_python2}" >&2
         exit 1
         ;;
