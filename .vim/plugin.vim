@@ -164,7 +164,7 @@ let g:Lf_NormalMap = { "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit
 " 自动打开 quickfix window ，高度为 6
 let g:asyncrun_open = 6
 "---------------neomake----------------
-if !empty(glob('~/.vim/plugged/neomake/plugin/neomake.vim'))
+if exists('g:loaded_neomake')
     call neomake#configure#automake('nrwi', 300)
     " call neomake#configure#automake({ 'TextChanged': {'delay': 0}, 'InsertLeave': {'delay': 0}, 'BufWritePost': {'delay': 0}, 'BufWinEnter': {'delay': 0}, }, 500)
     " let g:neomake_open_list = 2
