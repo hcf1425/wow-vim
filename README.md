@@ -75,3 +75,6 @@ you can share some good plugins with me.
 	
     #if you need new vim or some deps, see ./install
     ./install
+
+    #Q&A, see wiki first
+
