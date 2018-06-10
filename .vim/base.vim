@@ -18,6 +18,12 @@ set backspace=indent,eol,start                  " set backspace can delete all w
 "
 " set buffer modifiable
 set modifiable
+"防止无法删除字符,无法退出
+set nocompatible
+set backspace=indent,eol,start
+"防止插入字符自动拆行+缩进
+autocmd FileType * setlocal textwidth=0
+
 
 
 "-----------color scheme----------
