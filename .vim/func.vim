@@ -92,7 +92,7 @@ function! s:GetBufferList()
 endfunction
 
 function! LocationToggle()
-  for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Location List"'), 'str2nr(matchstr(v:val, "\\d\\+"))') 
+  for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Location"'), 'str2nr(matchstr(v:val, "\\d\\+"))') 
     if bufwinnr(bufnum) != -1
       lclose
       return
