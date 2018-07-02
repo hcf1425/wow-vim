@@ -109,7 +109,7 @@ let g:go_fmt_autosave = 1
 let g:go_def_mode = 'godef'
 let g:go_fmt_command = 'goimports'
 let g:go_get_update = 0
-let g:syntastic_go_checkers = [ 'go' ]
+" let g:syntastic_go_checkers = [ 'go' ]
 let g:go_fmt_fail_silently = 1
 let g:go_list_type = 'quickfix'
 let g:go_def_reuse_buffer = 1
@@ -164,8 +164,10 @@ let g:Lf_NormalMap = { "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit
 " 自动打开 quickfix window ，高度为 6
 let g:asyncrun_open = 6
 "---------------neomake----------------
-if exists('g:loaded_neomake')
-    call neomake#configure#automake('nrwi', 300)
+
+" if exists('g:loaded_neomake')
+if !empty(glob('~/.vim/plugged/neomake/plugin/neomake.vim'))
+    call neomake#configure#automake('nrwi', 100)
     " call neomake#configure#automake({ 'TextChanged': {'delay': 0}, 'InsertLeave': {'delay': 0}, 'BufWritePost': {'delay': 0}, 'BufWinEnter': {'delay': 0}, }, 500)
     " let g:neomake_open_list = 2
     let g:neomake_error_sign = {'text': '!!', 'texthl': 'ERROR'}
