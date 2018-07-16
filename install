@@ -12,8 +12,6 @@ function centos7_vim_inst()
     sudo yum install -y git gcc gcc-c++ lua-devel ruby-devel perl-devel ncurses-devel make python-devel cmake perl-ExtUtils-Embed
 
     #install new vim
-    wget http://luajit.org/download/LuaJIT-2.0.4.tar.gz
-    tar xzvf LuaJIT-2.0.4.tar.gz && cd LuaJIT-2.0.4 && make -j$CORES && sudo make install
     git clone https://github.com/vim/vim.git /tmp/vim
     cd /tmp/vim && ./configure --prefix=/usr/local/vim --enable-multibyte --enable-fontset --enable-xim --enable-gui=auto --enable-cscope --with-x --with-compiledby=adam --with-luajit --enable-luainterp=dynamic --enable-pythoninterp=yes --enable-pythoninterp=dynamic --enable-python3interp=dynamic --with-python-config-dir=/usr/lib64/python2.7/config --enable-rubyinterp=dynamic --enable-rubyinterp=yes --enable-perlinterp=yes
     make -j$CORES && sudo make install
